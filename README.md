@@ -1,6 +1,6 @@
 # Cordova Watch Connectivity Plugin
 
-Simple plugin that establishes iOS Watch Connectivity session with Watch OS 2 / 3 / 4 and helps exchange of messages between an iPhone hybrid application and its Apple Watch application and vice-versa.
+Simple plugin that establishes iOS Watch Connectivity session with Watch OS and helps exchange of messages between a hybrid application and its Apple Watch application and vice-versa.
 
 ## Installation
 
