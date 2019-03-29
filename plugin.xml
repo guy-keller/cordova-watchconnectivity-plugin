@@ -15,8 +15,8 @@
     <!-- WatchConnectivity Dependency -->
     <framework src="WatchConnectivity.framework" />
 
-    <!-- Using an .a lib, hence no messing around too much with the conf -->
-    <source-file src="src/ios/libWCiOS.a" framework="true" />
+    <!-- Using an .framework lib, hence no messing around too much with the conf -->
+    <source-file src="src/ios/WCiOS.framework" target-dir="lib" framework="true" />
 
     <!-- The 'feature name' value is then available on the www/*-plugin.js file -->
     <config-file target="config.xml" parent="/*">
