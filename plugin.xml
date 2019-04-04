@@ -15,8 +15,9 @@
     <!-- WatchConnectivity Dependency -->
     <framework src="WatchConnectivity.framework" />
 
-    <!-- Using an .framework lib, hence no messing around too much with the conf -->
-    <source-file src="src/ios/WCiOS.framework" target-dir="lib" framework="true" />
+    <!-- Changes to .h and to .m are to be made on: 'cordova-watchconnectivity-plugin-source' -->
+    <header-file src="src/ios/WCiOS.h" target-dir="WCPlugin" />
+    <source-file src="src/ios/WCiOS.m" target-dir="WCPlugin" />	    
 
     <!-- The 'feature name' value is then available on the www/*-plugin.js file -->
     <config-file target="config.xml" parent="/*">
