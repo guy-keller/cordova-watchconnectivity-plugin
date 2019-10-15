@@ -40,14 +40,17 @@ Edit `www/js/index.js` and add the following code inside `onDeviceReady`
     
     // Initialised WatchConnectivity Session successfully
     var initWatchSuccess = function() {
-        // Sends a message through 'sendMessage'
-        var message = {message: "hello from phone", value: "1234", foo: "bar"};
-        WatchConnectivity.sendMessage(message, sendMessageSuccess, sendMessageFailure);
+        // Waits for 1sec, it 'should be enough' to establish a session with the watch
+        window.setTimeout( () => {
+	    // Sends a message through 'sendMessage' - it 'should be' connected now
+            var message = {message: "hello from phone", value: "1234", foo: "bar"};
+            WatchConnectivity.sendMessage(message, sendMessageSuccess, sendMessageFailure);
 	    // Sends a message through 'updateApplicationContext'
 	    WatchConnectivity.updateApplicationContext(message, sendMessageSuccess, sendMessageFailure);
         
 	    // Register to receive messages
-        WatchConnectivity.messageReceiver(receiveMessageSuccess, receiveMessageFailure);
+            WatchConnectivity.messageReceiver(receiveMessageSuccess, receiveMessageFailure);
+	}, 1000);
     };
     var initWatchFailure = function() {
         alert("Could not connect to Apple Watch.");
@@ -125,6 +128,7 @@ func sendMessage() {
     }
 }
 ```
+**EXTRA INFO** - See the following link: https://developer.apple.com/documentation/watchconnectivity/wcsession
 ### Objective-C
 ```objective-c
 
